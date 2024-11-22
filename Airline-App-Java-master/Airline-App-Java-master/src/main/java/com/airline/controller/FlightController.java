@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/flight")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*", allowCredentials = "true")
 public class FlightController {
 
     @Autowired
@@ -27,8 +27,12 @@ public class FlightController {
     //To Get all flights
     @GetMapping("/")
     public ResponseEntity<List<Flight>> getAllFlight(){
-        List<Flight> allFlight = flightService.getAllFlight();
-        return new ResponseEntity<>(allFlight,HttpStatus.OK);
+        try {
+            List<Flight> allFlight = flightService.getAllFlight();
+            return new ResponseEntity<>(allFlight, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     //To Get flight
