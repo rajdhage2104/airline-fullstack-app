@@ -1,13 +1,13 @@
 com/airline/model/Flight.class
 com/airline/model/User.class
 com/airline/service/impl/FlightServiceImpl.class
-com/airline/config/SecurityConfig.class
 com/airline/service/UserService.class
+com/airline/config/SecurityConfig.class
 com/airline/security/JwtAuthenticationFilter.class
 com/airline/dto/LoginRequest.class
+com/airline/AirlineApplication.class
 com/airline/repository/FlightRepository.class
 com/airline/controller/FlightController.class
-com/airline/AirlineApplication.class
 com/airline/dto/LoginResponse.class
 com/airline/repository/UserRepository.class
 com/airline/security/JwtUtil.class
